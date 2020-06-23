@@ -20,7 +20,8 @@
     "baseUrl": "./src",
     "paths": {
       "@presentation/*": ["presentation/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@store/*": ["store/*"]
     }
   },
   "exclude": ["node_modules"],
