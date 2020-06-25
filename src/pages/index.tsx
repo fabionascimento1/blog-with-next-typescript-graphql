@@ -1,12 +1,10 @@
-import Link from "next/link";
 import Layout from "@presentation/layout/MainLayout";
-import Profile from "@presentation/components/Profile";
-import ListPosts, { ALL_POSTS_QUERY } from "@presentation/components/Posts";
+import Posts, { ALL_POSTS_QUERY } from "@presentation/components/Posts";
 import { initializeApollo } from "@utils/apollo";
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <Profile />
+    <Posts />
   </Layout>
 );
 

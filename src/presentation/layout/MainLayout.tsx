@@ -2,6 +2,8 @@ import React, { ReactNode } from "react";
 import Head from "next/head";
 import { Wrapper } from "@presentation/layout/components/Grid";
 import Header from "@presentation/components/Header";
+import Profile from "@presentation/components/Profile";
+import { Grid } from "./styles";
 
 type Props = {
   children?: ReactNode;
@@ -17,7 +19,10 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </Head>
     <Wrapper>
       <Header />
-      {children}
+      <Grid>
+        <Profile />
+        {children}
+      </Grid>
       <footer>
         <hr />
         <span>I'm here to stay (Footer)</span>
