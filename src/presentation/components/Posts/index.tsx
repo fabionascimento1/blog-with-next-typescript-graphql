@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { Post, Midia, Resume, Categories } from "./styles";
+
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
@@ -7,8 +10,10 @@ export const ALL_POSTS_QUERY = gql`
       id
       title
       slug
-      image {
-        url
+      midia
+      resume
+      categories {
+        title
       }
     }
   }
@@ -17,6 +22,13 @@ export const ALL_POSTS_QUERY = gql`
 interface IPost {
   id?: number;
   title?: string;
+  slug?: string;
+  resume?: string;
+  midia?: string;
+  categories?: [] | undefined;
+}
+interface ICategories {
+  title: string;
 }
 
 export default function ListPosts() {
@@ -31,9 +43,22 @@ export default function ListPosts() {
   return (
     <div>
       {posts.map((post: IPost) => (
-        <div key={post.id}>
-          <div>{post.title}</div>
-        </div>
+        <Post key={post.id}>
+          <Categories>
+            {post.categories.map((category: ICategories) => (
+              <div>{category.title}</div>
+            ))}
+          </Categories>
+          <Link href="/[slug]" as={"/" + post.slug}>
+            <a>
+              <h2>{post.title}</h2>
+            </a>
+          </Link>
+          <Midia>
+            <img src={post.midia} width="100%" />
+          </Midia>
+          <Resume>{post.resume}</Resume>
+        </Post>
       ))}
     </div>
   );
