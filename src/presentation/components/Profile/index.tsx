@@ -4,7 +4,7 @@ import { content } from "./Card/content";
 const Profile = () => {
   return (
     <>
-      <Card image={content.image} bio={content.bio} />
+      <Card name={content.name} image={content.image} bio={content.bio} />
     </>
   );
 };

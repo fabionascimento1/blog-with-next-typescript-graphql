@@ -1,17 +1,25 @@
 import React, { FunctionComponent } from "react";
-import { Image, Bio } from "./styles";
+import { Section } from "./styles";
+import SocialIcons from "@presentation/components/Profile/SocialIcons";
 
 type ICard = {
+  name: string;
   image: string;
   bio: string;
 };
 
-const Card: FunctionComponent<ICard> = ({ image, bio }: ICard) => {
+const Card: FunctionComponent<ICard> = ({ name, image, bio }: ICard) => {
   return (
-    <div>
-      <img src={image} width="200" />
-      <Bio>{bio}</Bio>
-    </div>
+    <Section>
+      <div className="perfil">
+        <img src={image} width="100" />
+        <div className="perfil-name-icons">
+          <div className="name"> {name} </div>
+          <SocialIcons />
+        </div>
+      </div>
+      <div className="bio">{bio}</div>
+    </Section>
   );
 };
 

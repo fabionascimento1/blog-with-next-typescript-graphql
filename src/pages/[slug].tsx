@@ -1,9 +1,18 @@
 import React from "react";
 import { useRouter } from "next/router";
+import ReactMarkdown from "react-markdown";
+
 import Layout from "@presentation/layout/MainLayout";
 
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
+
+import {
+  Article,
+  Header,
+  Section,
+  Footer,
+} from "@presentation/layout/components/Slug";
 
 const POST_BY_SLUG = gql`
   query($slug: String!) {
@@ -15,9 +24,18 @@ const POST_BY_SLUG = gql`
       resume
       titleseo
       descriptionseo
+      created_at
+      categories {
+        title
+      }
+      midia
     }
   }
 `;
+
+interface ICategories {
+  title: string;
+}
 
 function Post() {
   const router = useRouter();
@@ -36,7 +54,37 @@ function Post() {
 
   const { posts } = data;
 
-  return <Layout title={posts[0].title}>{posts[0].title}</Layout>;
+  return (
+    <Layout title={posts[0].title}>
+      <Article>
+        <Header>
+          <ul className="list-inline categories">
+            {posts[0].categories.map((category: ICategories) => (
+              <li>{category.title}</li>
+            ))}
+          </ul>
+          <h1>{posts[0].title}</h1>
+          <ul className="list-inline post-meta">
+            <li>{posts[0].created_at}</li>
+          </ul>
+          <figure
+            className="figure"
+            style={{
+              backgroundImage: `url('${posts[0].midia}')`,
+            }}
+          >
+            <img src={posts[0].midia} alt={posts[0].title} />
+          </figure>
+        </Header>
+
+        <Section>
+          <ReactMarkdown source={posts[0].description} escapeHtml={false} />
+        </Section>
+
+        <Footer></Footer>
+      </Article>
+    </Layout>
+  );
 }
 
 export default Post;

@@ -1,8 +1,9 @@
-import { Grid, Logo, DarkMode } from "./styles";
+import { Grid, DarkMode } from "./styles";
+import Logo from "./Logo";
 const Header = () => {
   return (
     <Grid>
-      <Logo>Fábio Nascimento</Logo>
+      <Logo />
       <DarkMode>DarkMode</DarkMode>
     </Grid>
   );
