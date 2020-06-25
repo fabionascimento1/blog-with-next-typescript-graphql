@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Post, Midia, Resume, Categories } from "./styles";
+import { Article } from "./styles";
 
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
@@ -12,6 +12,7 @@ export const ALL_POSTS_QUERY = gql`
       slug
       midia
       resume
+      created_at
       categories {
         title
       }
@@ -26,6 +27,7 @@ interface IPost {
   resume?: string;
   midia?: string;
   categories?: [] | undefined;
+  created_at: string;
 }
 interface ICategories {
   title: string;
@@ -43,22 +45,28 @@ export default function ListPosts() {
   return (
     <div>
       {posts.map((post: IPost) => (
-        <Post key={post.id}>
-          <Categories>
+        <Article key={post.id}>
+          <ul className="list-inline categories">
             {post.categories.map((category: ICategories) => (
-              <div>{category.title}</div>
+              <li>{category.title}</li>
             ))}
-          </Categories>
+          </ul>
           <Link href="/[slug]" as={"/" + post.slug}>
             <a>
               <h2>{post.title}</h2>
             </a>
           </Link>
-          <Midia>
-            <img src={post.midia} width="100%" />
-          </Midia>
-          <Resume>{post.resume}</Resume>
-        </Post>
+          <figure
+            className="figure"
+            style={{
+              backgroundImage: `url('${post.midia}')`,
+            }}
+          >
+            <img src={post.midia} alt={post.title} width="100%" />
+          </figure>
+          <div className="resume">{post.resume}</div>
+          <div className="created_at">{post.created_at}</div>
+        </Article>
       ))}
     </div>
   );
