@@ -6,9 +6,6 @@ import { useApollo } from "@utils/apollo";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "@presentation/layout/GlobalStyles";
 
-import { Provider } from "react-redux";
-import store from "@store/index";
-
 const darkTheme = {
   background: "rgb(33, 44, 79)",
   text: "#fff",
@@ -26,12 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ApolloProvider client={apolloClient}>
-        <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
-            <GlobalStyles />
-          </ThemeProvider>
-        </Provider>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+          <GlobalStyles />
+        </ThemeProvider>
       </ApolloProvider>
     </>
   );

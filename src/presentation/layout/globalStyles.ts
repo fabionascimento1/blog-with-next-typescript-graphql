@@ -7,11 +7,11 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
- body, #root {
+  html, #root {
     height: 100%;
   }
 
-  html{
+  body{
     height: 100%;
     background: ${(props) => props.theme.background};
     color: ${(props) => props.theme.text};
