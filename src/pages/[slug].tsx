@@ -73,7 +73,7 @@ function Post() {
               backgroundImage: `url('${posts[0].midia}')`,
             }}
           >
-            <img src={posts[0].midia} alt={posts[0].title} />
+            <img src={posts[0].midia} alt={posts[0].title} width="100%" />
           </figure>
         </Header>
 
