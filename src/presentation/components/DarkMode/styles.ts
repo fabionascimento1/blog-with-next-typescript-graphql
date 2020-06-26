@@ -5,6 +5,7 @@ export const DarkMode_ = styled.div`
     margin-top: 25px;
     padding: 8px 15px;
     border-radius: 12px;
+    font-family: "Blender Pro";
     color: ${(props) => props.theme.textOther};
     background: ${(props) => props.theme.backgroundOther};
   }

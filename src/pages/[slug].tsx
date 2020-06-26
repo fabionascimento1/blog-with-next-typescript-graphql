@@ -9,12 +9,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 import { parseISO, format } from "date-fns";
 
-import {
-  Article,
-  Header,
-  Section,
-  Footer,
-} from "@presentation/layout/components/Slug";
+import { Article, Section, Footer } from "@presentation/layout/components/Slug";
 
 const POST_BY_SLUG = gql`
   query($slug: String!) {
@@ -59,7 +54,7 @@ function Post() {
   return (
     <Layout title={posts[0].title}>
       <Article>
-        <Header>
+        <header>
           <ul className="list-inline categories">
             {posts[0].categories.map((category: ICategories) => (
               <li>{category.title}</li>
@@ -77,7 +72,7 @@ function Post() {
           >
             <img src={posts[0].midia} alt={posts[0].title} width="100%" />
           </figure>
-        </Header>
+        </header>
 
         <Section>
           <ReactMarkdown source={posts[0].description} escapeHtml={false} />

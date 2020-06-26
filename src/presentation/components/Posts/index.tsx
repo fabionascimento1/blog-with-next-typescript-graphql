@@ -48,11 +48,6 @@ export default function ListPosts() {
     <div>
       {posts.map((post: IPost) => (
         <Article key={post.id}>
-          <ul className="list-inline categories">
-            {post.categories.map((category: ICategories) => (
-              <li>{category.title}</li>
-            ))}
-          </ul>
           <Link href="/[slug]" as={"/" + post.slug}>
             <a>
               <h2>{post.title}</h2>
@@ -70,6 +65,12 @@ export default function ListPosts() {
             <img src={post.midia} alt={post.title} width="100%" />
           </figure>
           <div className="resume">{post.resume}</div>
+
+          <ul className="list-inline categories">
+            {post.categories.map((category: ICategories) => (
+              <li>{category.title}</li>
+            ))}
+          </ul>
         </Article>
       ))}
     </div>

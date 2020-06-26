@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const Article = styled.article`
   margin-top: 20px;
-`;
 
-export const Header = styled.header`
   .list-inline {
     display: flex;
     li {
@@ -17,41 +15,42 @@ export const Header = styled.header`
       list-style: none;
       margin-right: 10px;
       padding: 5px 15px;
-      border-radius: 20px;
+      border-radius: 12px;
       font-size: 14px;
-      color: ${(props) => props.theme.textOther};
-      background: ${(props) => props.theme.backgroundOther};
+      color: ${(props) => props.theme.text};
+      background: var(--primary);
     }
   }
 
   .post-meta {
     li {
-      font-size: 13px;
+      font-size: 14px;
       margin-bottom: 10px;
     }
   }
 
   h1 {
     font-size: 60px;
+    color: var(--primary);
   }
 
   figure {
-    .figure {
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 40px;
-      margin-inline-end: 40px;
-      img {
-        margin: 0.5em auto;
-        display: block;
-        height: auto;
-      }
-    }
+    height: 500px;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
   }
 `;
 
 export const Section = styled.section`
+  /* margin-top: -200px;
+  background: ${(props) => props.theme.background};
+  padding: 30px;
+  z-index: 10;
+  min-height: 200px;
+  position: relative; */
+
   p {
     margin: 10px 0;
     line-height: 140%;

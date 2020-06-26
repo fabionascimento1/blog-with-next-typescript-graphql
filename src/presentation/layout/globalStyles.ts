@@ -37,7 +37,6 @@ export default createGlobalStyle`
     line-height: 1.4;
     padding-left: 0.125em;
     padding-right: 0.125em;
-    text-shadow: rgba(79, 79, 79, 0.6) 0.008em 0.008em, rgba(79, 79, 79, 0.6) 0.008em -0.008em, rgba(79, 79, 79, 0.6) -0.008em 0.008em, rgba(79, 79, 79, 0.6) -0.008em -0.008em;
   }
 
   body, input, button {
@@ -49,7 +48,7 @@ export default createGlobalStyle`
   }
 
   :root {
-    --primary: #36393f;
+    --primary: #33d9b8;
     --secondary: #2f3136;
     --tertiary: rgb(32,34,37);
     --quaternary: #292b2f;
