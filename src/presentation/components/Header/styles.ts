@@ -7,8 +7,8 @@ export const Grid = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
-`;
 
-export const DarkMode = styled.div`
-  text-align: right;
+  .darkMode {
+    text-align: right;
+  }
 `;

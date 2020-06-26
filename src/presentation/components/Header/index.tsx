@@ -1,10 +1,13 @@
-import { Grid, DarkMode } from "./styles";
+import { Grid } from "./styles";
 import Logo from "./Logo";
+import DarkMode from "./DarkMode";
 const Header = () => {
   return (
     <Grid>
       <Logo />
-      <DarkMode>DarkMode</DarkMode>
+      <div className="darkMode">
+        <DarkMode />
+      </div>
     </Grid>
   );
 };
