@@ -11,15 +11,17 @@ export const Article = styled.div`
     li {
       list-style: none;
       margin-right: 10px;
-      border: 1px solid #f4f4f4;
       padding: 5px 15px;
       border-radius: 20px;
+      font-size: 14px;
+      color: ${(props) => props.theme.textOther};
+      background: ${(props) => props.theme.backgroundOther};
     }
   }
 
   h2 {
     font-size: 42px;
-    margin: 5px 0 20px;
+    margin: 5px 0;
   }
 
   .categories {

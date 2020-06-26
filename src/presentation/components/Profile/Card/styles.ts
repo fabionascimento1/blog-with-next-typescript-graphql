@@ -15,7 +15,7 @@ export const Section = styled.section`
       margin-bottom: 10px;
 
       h3 {
-        line-height: 120%;
+        line-height: 100%;
       }
     }
   }
