@@ -13,6 +13,10 @@ export const Section = styled.section`
 
     .name {
       margin-bottom: 10px;
+
+      h3 {
+        line-height: 120%;
+      }
     }
   }
 

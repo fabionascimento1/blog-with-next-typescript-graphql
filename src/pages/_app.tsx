@@ -1,7 +1,7 @@
 import { AppProps } from "next/app";
 
 import { ApolloProvider } from "@apollo/react-hooks";
-import { useApollo } from "@utils/apollo";
+import { useApollo } from "@utils/apolloClient";
 
 import { Provider } from "react-redux";
 import store from "@store/index";

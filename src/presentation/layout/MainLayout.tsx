@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import { Wrapper } from "@presentation/layout/components/Grid";
-import Header from "@presentation/components/Header";
 import Profile from "@presentation/components/Profile";
 import { Grid } from "./styles";
 
@@ -18,7 +17,6 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Wrapper>
-      <Header />
       <Grid>
         <Profile />
         {children}

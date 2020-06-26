@@ -1,6 +1,6 @@
 import Layout from "@presentation/layout/MainLayout";
 import Posts, { ALL_POSTS_QUERY } from "@presentation/components/Posts";
-import { initializeApollo } from "@utils/apollo";
+import { initializeApollo } from "@utils/apolloClient";
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">

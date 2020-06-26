@@ -1,6 +1,8 @@
 import Card from "./Card";
 import { content } from "./Card/content";
 
+import React from "react";
+
 const Profile = () => {
   return (
     <>

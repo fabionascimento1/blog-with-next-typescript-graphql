@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
+  @font-face {
+    font-family: 'Blender Pro';
+      src: url('./fonts/blenderpro.woff');
+      src: url('./fonts/blenderpro.woff2');
+  }
   * {
     margin: 0;
     padding: 0;
@@ -15,13 +20,27 @@ export default createGlobalStyle`
     height: 100%;
     background: ${(props) => props.theme.background};
     color: ${(props) => props.theme.text};
+    font-family: 'Roboto', sans-serif;
+  }
+
+  a{
+    color: ${(props) => props.theme.text};
+    text-decoration: none;
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    font-family: 'Blender Pro', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.075em;
+    line-height: 1.4;
+    padding-left: 0.125em;
+    padding-right: 0.125em;
+    text-shadow: rgba(79, 79, 79, 0.6) 0.008em 0.008em, rgba(79, 79, 79, 0.6) 0.008em -0.008em, rgba(79, 79, 79, 0.6) -0.008em 0.008em, rgba(79, 79, 79, 0.6) -0.008em -0.008em;
   }
 
   *, button, input {
     border: 0;
     outline: 0;
-
-    font-family: 'Roboto', sans-serif;
   }
 
   :root {

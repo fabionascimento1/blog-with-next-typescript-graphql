@@ -3,6 +3,8 @@ import GlobalStyles from "@presentation/layout/GlobalStyles";
 
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 
+import { ITheme } from "@utils/interfaces";
+
 const darkTheme = {
   background: "rgb(33, 44, 79)",
   text: "#fff",
@@ -12,10 +14,6 @@ const lightTheme = {
   background: "#fff",
   text: "rgb(33, 44, 79)",
 };
-
-interface ITheme {
-  theme: string;
-}
 
 type Props = {
   children: React.ReactNode;

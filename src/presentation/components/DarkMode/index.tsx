@@ -2,9 +2,7 @@ import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import changeTheme from "@store/modules/theme/actions";
 
-interface ITheme {
-  theme: string;
-}
+import { ITheme } from "@utils/interfaces";
 
 function DarkMode() {
   const typedThemeSelector: TypedUseSelectorHook<ITheme> = useSelector;
