@@ -7,6 +7,8 @@ import Layout from "@presentation/layout/MainLayout";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/react-hooks";
 
+import { parseISO, format } from "date-fns";
+
 import {
   Article,
   Header,
@@ -65,7 +67,7 @@ function Post() {
           </ul>
           <h1>{posts[0].title}</h1>
           <ul className="list-inline post-meta">
-            <li>{posts[0].created_at}</li>
+            <li> {format(parseISO(posts[0].created_at), "dd/MM/yyyy")}</li>
           </ul>
           <figure
             className="figure"

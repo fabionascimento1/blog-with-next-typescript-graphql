@@ -4,6 +4,8 @@ import { Article } from "./styles";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
+import { parseISO, format } from "date-fns";
+
 export const ALL_POSTS_QUERY = gql`
   query {
     posts {
@@ -56,6 +58,9 @@ export default function ListPosts() {
               <h2>{post.title}</h2>
             </a>
           </Link>
+          <div className="created_at">
+            {format(parseISO(post.created_at), "dd/MM/yyyy")}
+          </div>
           <figure
             className="figure"
             style={{
@@ -65,7 +70,6 @@ export default function ListPosts() {
             <img src={post.midia} alt={post.title} width="100%" />
           </figure>
           <div className="resume">{post.resume}</div>
-          <div className="created_at">{post.created_at}</div>
         </Article>
       ))}
     </div>
