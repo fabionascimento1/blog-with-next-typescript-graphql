@@ -8,6 +8,8 @@ export const DarkMode_ = styled.div`
     font-family: "Blender Pro";
     color: ${(props) => props.theme.textOther};
     background: ${(props) => props.theme.backgroundOther};
+    width: 100%;
+    min-height: 15px;
   }
 
   .Light {

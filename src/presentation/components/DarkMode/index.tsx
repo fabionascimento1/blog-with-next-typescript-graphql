@@ -26,7 +26,7 @@ function DarkMode() {
   return (
     <DarkMode_>
       <button onClick={ChangeTheme} className={_viewLabelTheme}>
-        Mudar o Tema para {_viewLabelTheme}
+        Tema para {_viewLabelTheme}
       </button>
     </DarkMode_>
   );
