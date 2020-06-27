@@ -32,6 +32,8 @@ export const Article = styled.article`
   h1 {
     font-size: 60px;
     color: var(--primary);
+    line-height: 90%;
+    margin: 10px 0;
   }
 
   figure {
@@ -52,8 +54,8 @@ export const Section = styled.section`
   position: relative; */
 
   p {
-    margin: 10px 0;
-    line-height: 140%;
+    margin: 15px 0;
+    line-height: 160%;
   }
   ul {
     margin-left: 20px;
