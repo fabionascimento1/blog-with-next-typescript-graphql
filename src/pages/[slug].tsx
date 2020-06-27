@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 
@@ -10,6 +10,8 @@ import { useQuery } from "@apollo/react-hooks";
 import { parseISO, format } from "date-fns";
 
 import { Article, Section, Footer } from "@presentation/layout/components/Slug";
+
+import ReadingProgress from "@presentation/components/ProgressBarScroll";
 
 const POST_BY_SLUG = gql`
   query($slug: String!) {
@@ -35,6 +37,8 @@ interface ICategories {
 }
 
 function Post() {
+  const target = createRef();
+
   const router = useRouter();
   const { slug } = router.query;
 
@@ -52,35 +56,38 @@ function Post() {
   const { posts } = data;
 
   return (
-    <Layout title={posts[0].title}>
-      <Article>
-        <header>
-          <ul className="list-inline categories">
-            {posts[0].categories.map((category: ICategories) => (
-              <li>{category.title}</li>
-            ))}
-          </ul>
-          <h1>{posts[0].title}</h1>
-          <ul className="list-inline post-meta">
-            <li> {format(parseISO(posts[0].created_at), "dd/MM/yyyy")}</li>
-          </ul>
-          <figure
-            className="figure"
-            style={{
-              backgroundImage: `url('${posts[0].midia}')`,
-            }}
-          >
-            <img src={posts[0].midia} alt={posts[0].title} width="100%" />
-          </figure>
-        </header>
+    <>
+      <ReadingProgress />
+      <Layout title={posts[0].title}>
+        <Article key={posts[0].id}>
+          <header>
+            <ul className="list-inline categories">
+              {posts[0].categories.map((category: ICategories) => (
+                <li>{category.title}</li>
+              ))}
+            </ul>
+            <h1>{posts[0].title}</h1>
+            <ul className="list-inline post-meta">
+              <li> {format(parseISO(posts[0].created_at), "dd/MM/yyyy")}</li>
+            </ul>
+            <figure
+              className="figure"
+              style={{
+                backgroundImage: `url('${posts[0].midia}')`,
+              }}
+            >
+              <img src={posts[0].midia} alt={posts[0].title} width="100%" />
+            </figure>
+          </header>
 
-        <Section>
-          <ReactMarkdown source={posts[0].description} escapeHtml={false} />
-        </Section>
+          <Section>
+            <ReactMarkdown source={posts[0].description} escapeHtml={false} />
+          </Section>
 
-        <Footer></Footer>
-      </Article>
-    </Layout>
+          <Footer></Footer>
+        </Article>
+      </Layout>
+    </>
   );
 }
 

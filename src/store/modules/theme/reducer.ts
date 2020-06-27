@@ -3,7 +3,7 @@ interface InterfaceInicitialState {
 }
 
 const InitialState: InterfaceInicitialState = {
-  theme: "dark",
+  theme: "light",
 };
 
 export default function theme(
