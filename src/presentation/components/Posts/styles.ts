@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { customMedia } from "@presentation/layout/components/CustomMedia";
 
 export const Article = styled.div`
   padding: 20px;
@@ -16,6 +17,10 @@ export const Article = styled.div`
       font-size: 14px;
       color: ${(props) => props.theme.text};
       background: var(--primary);
+
+      ${customMedia.lessThan("tablet")`
+        font-size: 12px;
+      `}
     }
   }
 
@@ -23,6 +28,11 @@ export const Article = styled.div`
     font-size: 60px;
     margin: 5px 0;
     color: var(--primary);
+    line-height: 90%;
+    margin: 0px 0 10px;
+    ${customMedia.lessThan("tablet")`
+      font-size: 42px;
+    `}
   }
 
   .categories {
@@ -31,6 +41,9 @@ export const Article = styled.div`
   }
   .created_at {
     margin-bottom: 10px;
+    ${customMedia.lessThan("tablet")`
+      font-size: 12px;
+    `}
   }
   figure {
     height: 350px;

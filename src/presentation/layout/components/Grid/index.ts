@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import media, { generateMedia } from "styled-media-query";
-
-const customMedia = generateMedia({
-  desktop: "1366px",
-  xnotebook: "1280px",
-  notebook: "1170px",
-  tablet: "1024px",
-  mobile: "450px",
-});
+import { customMedia } from "@presentation/layout/components/CustomMedia";
 
 export const Wrapper = styled.div`
   width: 1326px;
@@ -18,11 +10,11 @@ export const Wrapper = styled.div`
     width: 1240px;
   `}
 
-  ${media.between("small", "large")`
+  ${customMedia.between("mobile", "notebook")`
     width: 98%;
   `}
 
-  ${media.lessThan("small")`
+  ${customMedia.lessThan("mobile")`
     width: 98%;
   `}
 `;

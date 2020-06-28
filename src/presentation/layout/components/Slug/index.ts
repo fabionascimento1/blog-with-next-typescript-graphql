@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { customMedia } from "@presentation/layout/components/CustomMedia";
 
 export const Article = styled.article`
   margin-top: 20px;
+
+  ${customMedia.lessThan("tablet")`
+    margin-top: 50px;
+  `}
 
   .list-inline {
     display: flex;
@@ -19,6 +24,9 @@ export const Article = styled.article`
       font-size: 14px;
       color: ${(props) => props.theme.text};
       background: var(--primary);
+      ${customMedia.lessThan("tablet")`
+        font-size: 12px;
+      `}
     }
   }
 
@@ -26,6 +34,9 @@ export const Article = styled.article`
     li {
       font-size: 14px;
       margin-bottom: 10px;
+      ${customMedia.lessThan("tablet")`
+        font-size: 12px;
+      `}
     }
   }
 
@@ -34,6 +45,9 @@ export const Article = styled.article`
     color: var(--primary);
     line-height: 90%;
     margin: 10px 0;
+    ${customMedia.lessThan("tablet")`
+      font-size: 42px;
+    `}
   }
 
   figure {
