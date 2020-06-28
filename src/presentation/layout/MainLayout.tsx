@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Wrapper } from "@presentation/layout/components/Grid";
 import Profile from "@presentation/components/Profile";
 import { Grid } from "./styles";
+import Footer from "@presentation/components/Footer";
 
 type Props = {
   children?: ReactNode;
@@ -21,10 +22,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
         <Profile />
         {children}
       </Grid>
-      <footer>
-        <hr />
-        <span>I'm here to stay (Footer)</span>
-      </footer>
+      <Footer />
     </Wrapper>
   </>
 );
