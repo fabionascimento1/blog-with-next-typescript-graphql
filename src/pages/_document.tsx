@@ -64,6 +64,7 @@ class MyDocument extends Document {
             `,
             }}
           />
+          <link rel="stylesheet" href="/assets/styles/nprogress.css" />
         </Head>
         <body>
           <Main />

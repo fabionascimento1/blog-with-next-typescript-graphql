@@ -7,16 +7,16 @@ import { ITheme } from "@utils/interfaces";
 
 const darkTheme = {
   background: "rgb(33, 44, 79)",
-  backgroundOther: "#FFF",
-  text: "#fff",
+  backgroundOther: "#f5f5f7",
+  text: "#f5f5f7",
   textOther: "rgb(33, 44, 79)",
 };
 
 const lightTheme = {
-  background: "#fff",
+  background: "#f5f5f7",
   backgroundOther: "rgb(33, 44, 79)",
   text: "rgb(33, 44, 79)",
-  textOther: "#fff",
+  textOther: "#f5f5f7",
 };
 
 type Props = {
